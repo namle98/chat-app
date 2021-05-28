@@ -3,11 +3,11 @@ const app = express()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const path = require('path')
-const {v4: uuidV4} = require('uuid')
+// const {v4: uuidV4} = require('uuid')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const listIdPeer = [];
+// const listIdPeer = [];
 
 io.on("connection", (socket) => {
     console.log('have some one connected')
@@ -16,10 +16,10 @@ io.on("connection", (socket) => {
         socket.room = data.room
         socket.name = data.userName
         socket.idPeer = data.idPeer
-        listIdPeer.push(data.idPeer)
+        // listIdPeer.push(data.idPeer)
         // socket.emit('sendListUser', listUser)
         socket.emit("serverSendInfoRoom", data.room)
-        socket.to(data.room).emit("sendIdPeer", listIdPeer)
+        socket.to(data.room).emit("sendIdPeer", data.idPeer)
         console.log(socket.idPeer)
     })
 

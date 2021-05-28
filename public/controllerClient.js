@@ -31,7 +31,7 @@ socket.on("sendChatFromServer", function(data){
 })
 
 socket.on("sendIdPeer", function(data){
-    
+    $(".call").attr("id", data)
 })
 
 $(document).ready(function(){

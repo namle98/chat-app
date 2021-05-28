@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="./controllerClient.js"></script>
+</head>
+<body>
+    <div id='container'>
+        <div id= 'info'>
+            <input type="text" id="userName" placeholder="userName"/>
+            <input type="text" id="room" placeholder="room"/>
+            <input type="button" id="login" value="Login"/>
+        </div>
+        <br/>
+        <div id="view-chat">
+            
+            <br/>
+            <div id="bornCall"></div>
+            <!-- <input style="margin-bottom: 10px;" type="button" class="call" value="call"> -->
+            <input style="margin-bottom: 10px;" type="button" id="endCall" value="end">
+
+            <br/>
+
+            <div id="call-video">
+                <video id="local-stream" width="300" controls></video>
+                <video id="remote-stream" width="300" controls></video>
+            </div>
+            <br/>
+            <div id="chat">
+                <div id="info-room"></div>
+                <div id="view-chat"></div>
+                <input type="text" id="inputMsg" placeholder="input some one">
+                <input type="button" id="send" value="Send">
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
